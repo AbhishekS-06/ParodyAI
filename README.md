@@ -1,184 +1,136 @@
-# ParodyAI 🎤
+# ParodyAI
 
-ParodyAI is an AI-powered application that transforms any song into a hilarious parody. It generates parody lyrics, synthesizes vocals, and overlays them on the instrumental track to create a complete parody audio file.
+A parody song generator that creates and mixes AI-generated lyrics with instrumentals.
 
----
+## Prerequisites
 
-## Features 🚀
+- Python 3.9 or higher
+- FFmpeg (required for audio processing)
+
+### Installing FFmpeg
+
+#### On macOS:
+```bash
+brew install ffmpeg
+```
+
+#### On Ubuntu/Debian:
+```bash
+sudo apt-get update
+sudo apt-get install ffmpeg
+```
+
+#### On Windows:
+1. Download FFmpeg from https://ffmpeg.org/download.html
+2. Add FFmpeg to your system PATH
+
+## Quick Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/RecordHacks.git
+cd RecordHacks
+```
+
+2. Create a `.env` file in the project root and add your OpenAI API key:
+```
+OPENAI_API_KEY=your_api_key_here
+```
+
+3. Run the installation script:
+```bash
+./install.sh  # On macOS/Linux
+# OR
+bash install.sh  # On Windows
+```
+
+## Manual Installation (if the script doesn't work)
+
+1. Create a virtual environment:
+```bash
+python3 -m venv venv
+```
+
+2. Activate the virtual environment:
+```bash
+# On macOS/Linux:
+source venv/bin/activate
+
+# On Windows:
+.\venv\Scripts\activate
+```
+
+3. Install the package:
+```bash
+pip3 install -e .
+```
+
+## Running the Application
+
+1. Make sure your virtual environment is activated
+2. Start the server:
+```bash
+python3 server.py
+```
+3. Open http://localhost:5000 in your web browser
+
+## Features
 
 1. **Generate Parody Lyrics**  
    - AI generates clever and funny parody lyrics while maintaining the rhythm and rhyme of the original song.
-
 2. **Text-to-Singing AI**  
    - Converts parody lyrics into realistic vocals using AI-powered voice synthesis.
-
 3. **Instrumental and Vocal Mixing**  
    - Overlays generated vocals on the instrumental track to produce a complete parody song.
 
-4. **Customizable Voices and Speed**  
-   - Choose from multiple AI voices and adjust playback speed for a personalized parody.
+## Troubleshooting
 
-5. **Web Interface**  
-   - User-friendly web interface for generating and downloading parody songs.
+If you encounter installation issues:
 
----
+1. Try using specific versions of packages:
+```bash
+pip3 uninstall openai spleeter httpx
+pip3 install openai==0.27.8 spleeter==2.3.2 httpx==0.19.0
+```
 
-## How It Works 🛠️
+2. If you get SSL errors:
+```bash
+pip3 install --trusted-host pypi.org --trusted-host files.pythonhosted.org -e .
+```
 
-1. **Input Song and Parody Theme**  
-   - Provide the original song title and the theme for the parody.
+3. For torch/torchaudio issues:
+```bash
+pip3 install torch torchaudio
+```
 
-2. **Generate Parody Lyrics**  
-   - The app fetches the original lyrics and generates parody lyrics using OpenAI's GPT model.
+4. For demucs installation problems:
+```bash
+pip3 install torch torchaudio
+pip3 install demucs
+```
 
-3. **Download Instrumental**  
-   - Extract the instrumental track using tools like `yt-dlp` or `Demucs`.
+5. Verify FFmpeg installation:
+```bash
+ffmpeg -version
+```
 
-4. **Synthesize Vocals**  
-   - Use Edge TTS to generate vocals from the parody lyrics.
-
-5. **Mix and Export**  
-   - Combine vocals and instrumental to create the final parody audio file.
-
----
-
-## Installation 🖥️
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/anishpalley/ParodyAI.git
-   cd ParodyAI
-   ```
-
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Set up environment variables:
-   - Create a `.env` file with the following keys:
-     ```
-     GENIUS_API_TOKEN=<your_genius_api_token>
-     OPENAI_API_KEY=<your_openai_api_key>
-     ```
-
-4. Run the Flask server:
-   ```bash
-   python server.py
-   ```
-
-5. Open the app in your browser at `http://127.0.0.1:5000`.
-
----
-
-## Usage 🎶
-
-### Web Interface
-1. Open the app in your browser.
-2. Enter the song title, parody theme, voice, and speed.
-3. Click "Generate Parody" to create and download your parody song.
-
-### API Endpoints
-- **Generate Parody**:  
-  Endpoint: `/generate_parody`  
-  Method: `POST`  
-  Payload:  
-  ```json
-  {
-    "song_name": "Song Title",
-    "topic": "Parody Theme",
-    "voice": "Voice Option",
-    "speed": "normal | slow | fast"
-  }
-  ```
-  Response:  
-  - On success:  
-    ```json
-    {
-      "parody_lyrics": "Generated parody lyrics...",
-      "audio_file_url": "/download_audio"
-    }
-    ```
-  - On failure:  
-    ```json
-    {
-      "error": "Error message"
-    }
-    ```
-
-- **Download Audio**:  
-  Endpoint: `/download_audio`  
-  Method: `GET`  
-  Response:  
-  - On success: Returns the generated MP3 file.  
-  - On failure:  
-    ```json
-    {
-      "error": "Audio file not found"
-    }
-    ```
-
----
-
-## Tools and Libraries 🛠️
-
-- **Flask**: Backend framework for the web interface.
-- **OpenAI GPT**: Generates parody lyrics.
-- **Edge TTS**: Text-to-speech synthesis.
-- **Pydub**: Audio processing and mixing.
-- **Demucs**: Instrumental and vocal separation.
-- **yt-dlp**: Downloads audio from YouTube.
-- **Genius API**: Fetches song lyrics.
-
----
-
-## File Structure 📂
+## File Structure
 
 ```
 RecordHacks/
-├── parody_generator.py         # Generates parody lyrics
-├── server.py                   # Flask server for the web interface
-├── main.py                     # Handles audio separation and mixing
-├── edge.py                     # Text-to-speech synthesis
-├── download_song_as_mp3.py     # Downloads songs from YouTube
-├── templates/                  # HTML templates for the web interface
-├── static/                     # CSS and JS files for the web interface
-├── requirements.txt            # Python dependencies
-├── README.md                   # Project documentation
+├── parody_generator.py     # Generates parody lyrics
+├── server.py              # Flask server for web interface
+├── main.py               # Handles audio separation and mixing
+├── edge.py              # Text-to-speech synthesis
+├── download_song_as_mp3.py # Downloads songs from YouTube
+├── templates/           # HTML templates
+├── static/             # CSS and JS files
+├── requirements.txt    # Python dependencies
+├── setup.py           # Package configuration
+├── install.sh         # Installation script
+└── README.md         # Documentation
 ```
 
----
+## License
 
-## Example 🎤
-
-1. Input:  
-   - Song: "Never Gonna Give You Up"  
-   - Theme: "Snacks and Yoga"
-
-2. Output:  
-   - Parody Lyrics:  
-     ```
-     We're no strangers to snacks,  
-     You know the crunch and so do I...  
-     ```
-   - Parody Audio: Downloadable MP3 file.
-
----
-
-## Contributing 🤝
-
-Contributions are welcome! Feel free to submit issues or pull requests to improve the project.
-
----
-
-## License 📜
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## Acknowledgments 🙌
-
-- [OpenAI](https://openai.com) for GPT models.
-- [Demucs](https://github.com/facebookresearch/demucs) for audio separation.
-- [Genius API](https://genius.com/developers) for fetching song lyrics.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

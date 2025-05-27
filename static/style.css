@@ -1,0 +1,408 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #ff7eb3, #ff758c);
+    color: white;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.header p {
+    font-size: 1.2rem;
+}
+
+.main-content {
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ensure the form elements take the full width of the parent container */
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Ensure all inputs and selects are the same width */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.btn {
+    background: linear-gradient(90deg, #6c63ff, #ff758c);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Make the button span the full width of the form */
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #5a52e0, #ff5a73);
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.result-section {
+    margin-top: 20px;
+}
+
+.result-section pre {
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #f4f4f4;
+    margin-top: 20px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6c63ff;
+}
+
+header nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+header nav .login {
+    color: #6c63ff;
+}
+
+header nav .signup {
+    background: linear-gradient(to right, #6c63ff, #9a63ff);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.hero {
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: #6c63ff;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #555;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to right, #6c63ff, #9a63ff);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(to right, #5a54e0, #8a54e0);
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.feature {
+    max-width: 200px;
+}
+
+.feature h3 {
+    color: #6c63ff;
+    margin-bottom: 10px;
+}
+
+footer {
+    padding: 20px;
+    background: #f8f9fc;
+    color: #555;
+}
+
+footer a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #6c63ff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 30px;
+}
+
+.logo span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff758c;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #ff758c;
+}
+
+.auth-buttons a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.login-btn {
+    color: #6c63ff;
+    background: transparent;
+    border: 1px solid #6c63ff;
+}
+
+.login-btn:hover {
+    background: #f3f0ff;
+    color: #6c63ff;
+}
+
+.signup-btn {
+    color: white;
+    background: linear-gradient(90deg, #6c63ff, #ff758c);
+    border: none;
+}
+
+.signup-btn:hover {
+    background: linear-gradient(90deg, #5a52e0, #ff5a73);
+    transform: scale(1.05);
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #6c63ff, #ff758c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.footer {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.feature {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.feature .icon img {
+    height: 100px;
+    margin-bottom: 2px;
+}
+
+.feature h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.feature p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.footer-bottom .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-bottom .logo img {
+    height: 30px;
+}
+
+.footer-bottom .logo span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff758c;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: #ff758c;
+}
+#audio-download {
+    text-align: center; /* Center the button */
+    margin-top: 20px;
+}
+
+#download-link {
+    display: inline-block; /* Ensure the button behaves like a block element */
+    width: 200px; /* Set a fixed width */
+    padding: 10px 15px; /* Add padding for better appearance */
+    background-color: #6c63ff; /* Button background color */
+    color: #fff; /* Button text color */
+    text-align: center; /* Center the text inside the button */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Add rounded corners */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    transition: background-color 0.3s ease; /* Add hover effect */
+}
+
+#download-link:hover {
+    background-color: #5a54e0; /* Darken the button on hover */
+}
